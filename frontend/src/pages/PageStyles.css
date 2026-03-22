@@ -1,0 +1,361 @@
+.page-container {
+  padding: 1rem;
+  color: #334155;
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.page-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: #1e293b;
+}
+
+.highlight {
+  color: #4f46e5;
+  background: linear-gradient(120deg, #4f46e5, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.page-subtitle {
+  font-size: 1.2rem;
+  color: #64748b;
+  margin-bottom: 3rem;
+  max-width: 600px;
+}
+
+/* Home Page */
+.hero-section {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.hero-section .page-subtitle {
+  margin: 0 auto 3rem auto;
+}
+
+.feature-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.feature-card {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  text-align: left;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.feature-card h3 {
+  color: #4f46e5;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+/* Empty State (Connections) */
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px dashed #cbd5e1;
+}
+
+.empty-state-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.primary-btn {
+  background: #4f46e5;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background 0.2s ease;
+}
+
+.primary-btn:hover {
+  background: #4338ca;
+}
+
+/* Announcements */
+.announcement-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.announcement-card {
+  background: #ffffff;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  border-left: 4px solid #cbd5e1;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+  position: relative;
+}
+
+.announcement-card.new {
+  border-left-color: #ec4899;
+}
+
+.announcement-card h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+  color: #0f172a;
+}
+
+.announcement-card .date {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.announcement-card p {
+  margin: 0;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.badge {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  background: #ec4899;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Home Expanded Sections */
+.home-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.home-section {
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(226, 232, 240, 0.5);
+}
+
+.section-title {
+  font-size: 1.75rem;
+  color: #1e293b;
+  margin: 0;
+}
+
+.section-desc {
+  color: #64748b;
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
+}
+
+/* People List (Connections) */
+.people-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.person-row {
+  display: flex;
+  align-items: center;
+  padding: 1.25rem;
+  background: #f8fafc;
+  border-radius: 12px;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.person-row:hover {
+  background: #f1f5f9;
+  transform: scale(1.01);
+}
+
+.person-avatar {
+  font-size: 2.5rem;
+  background: #e0e7ff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1.25rem;
+}
+
+.person-info {
+  flex: 1;
+}
+
+.person-info h4 {
+  margin: 0 0 0.25rem 0;
+  color: #0f172a;
+  font-size: 1.1rem;
+}
+
+.person-info p {
+  margin: 0;
+  color: #475569;
+  font-size: 0.9rem;
+}
+
+.person-skills {
+  display: flex;
+  gap: 0.5rem;
+  margin-right: 1.5rem;
+}
+
+.skill-badge {
+  background: #ede9fe;
+  color: #5b21b6;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.connect-btn {
+  background: transparent;
+  color: #4f46e5;
+  border: 1px solid #4f46e5;
+  padding: 0.5rem 1.25rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.connect-btn:hover {
+  background: #4f46e5;
+  color: white;
+}
+
+/* Mini Announcements */
+.mini-announcements {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.mini-announcement-card {
+  display: flex;
+  align-items: flex-start;
+  padding: 1.5rem;
+  background: #fffbfa;
+  border: 1px solid #ffedd5;
+  border-left: 4px solid #f97316;
+  border-radius: 12px;
+}
+
+.announcement-icon {
+  font-size: 2rem;
+  margin-right: 1rem;
+}
+
+.announcement-content h4 {
+  margin: 0 0 0.25rem 0;
+  color: #431407;
+  font-size: 1.1rem;
+}
+
+.announcement-content .date {
+  color: #fdba74;
+  font-size: 0.85rem;
+}
+
+/* Progress Dashboard Mini */
+.progress-dashboard-mini {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  flex: 1;
+  min-width: 200px;
+  background: #f0fdf4;
+  border: 1px solid #dcfce7;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #166534;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  color: #15803d;
+  font-weight: 600;
+}
+
+.progress-bar-bg {
+  width: 100%;
+  height: 8px;
+  background: #bbf7d0;
+  border-radius: 4px;
+  margin-top: 1rem;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: #16a34a;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .person-row {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .person-avatar {
+    margin: 0 0 1rem 0;
+  }
+  
+  .person-skills {
+    margin: 1rem 0;
+    justify-content: center;
+  }
+}
