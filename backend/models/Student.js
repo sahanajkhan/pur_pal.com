@@ -19,7 +19,11 @@ const studentSchema = new mongoose.Schema({
     required: [true, 'Please provide a password'],
     minlength: 6,
     select: false
-  }
+  },
+  connections: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Student'
+  }]
 }, { timestamps: true });
 
 const Student = mongoose.model('Student', studentSchema);
