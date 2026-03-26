@@ -20,6 +20,10 @@ const studentSchema = new mongoose.Schema({
     minlength: 6,
     select: false
   },
+  phoneNumber: {
+    type: String,
+    trim: true
+  },
   connections: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Student'
