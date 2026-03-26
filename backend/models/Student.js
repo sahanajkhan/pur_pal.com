@@ -24,6 +24,36 @@ const studentSchema = new mongoose.Schema({
     type: String,
     trim: true
   },
+  branch: {
+    type: String,
+    trim: true,
+    default: ''
+  },
+  goal: {
+    type: String,
+    trim: true,
+    default: ''
+  },
+  futurePlan: {
+    type: String,
+    trim: true,
+    default: ''
+  },
+  academicResults: {
+    type: String,
+    trim: true,
+    default: ''
+  },
+  interests: {
+    type: String,
+    trim: true,
+    default: ''
+  },
+  linkedinProfile: {
+    type: String,
+    trim: true,
+    default: ''
+  },
   connections: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Student'

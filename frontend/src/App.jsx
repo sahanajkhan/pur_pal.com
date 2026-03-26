@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Connection from './pages/Connection';
 import Announcement from './pages/Announcement';
 import Messages from './pages/Messages';
+import Profile from './pages/Profile';
 import MainLayout from './components/MainLayout';
 
 function App() {
@@ -23,7 +24,9 @@ function App() {
         <Route path="/messages" element={<MainLayout><Messages /></MainLayout>} />
         <Route path="/announcement" element={<MainLayout><Announcement /></MainLayout>} />
         <Route path="/dashboard" element={<MainLayout><Dashboard /></MainLayout>} />
+        <Route path="/profile/:id" element={<MainLayout><Profile /></MainLayout>} />
       </Routes>
+
     </Router>
   );
 }

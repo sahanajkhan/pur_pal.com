@@ -88,3 +88,66 @@ export const connectUser = async (req, res) => {
     res.status(500).json({ success: false, message: error.message });
   }
 };
+
+// @desc    Get user profile
+// @route   GET /api/users/profile/:id
+// @access  Private
+export const getUserProfile = async (req, res) => {
+  try {
+    let userId = req.params.id;
+    if (userId === 'me') {
+      userId = req.user._id;
+    }
+    
+    const user = await Student.findById(userId).select('-password');
+    if (!user) {
+      return res.status(404).json({ success: false, message: 'User not found' });
+    }
+    
+    res.status(200).json({ success: true, data: user });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+// @desc    Update user profile
+// @route   PUT /api/users/profile
+// @access  Private
+export const updateUserProfile = async (req, res) => {
+  try {
+    const user = await Student.findById(req.user._id);
+
+    if (user) {
+      user.name = req.body.name || user.name;
+      user.phoneNumber = req.body.phoneNumber || user.phoneNumber;
+      user.branch = req.body.branch || user.branch;
+      user.goal = req.body.goal || user.goal;
+      user.futurePlan = req.body.futurePlan || user.futurePlan;
+      user.academicResults = req.body.academicResults || user.academicResults;
+      user.interests = req.body.interests || user.interests;
+      user.linkedinProfile = req.body.linkedinProfile || user.linkedinProfile;
+
+      const updatedUser = await user.save();
+
+      res.status(200).json({
+        success: true,
+        data: {
+          _id: updatedUser._id,
+          name: updatedUser.name,
+          email: updatedUser.email,
+          phoneNumber: updatedUser.phoneNumber,
+          branch: updatedUser.branch,
+          goal: updatedUser.goal,
+          futurePlan: updatedUser.futurePlan,
+          academicResults: updatedUser.academicResults,
+          interests: updatedUser.interests,
+          linkedinProfile: updatedUser.linkedinProfile
+        }
+      });
+    } else {
+      res.status(404).json({ success: false, message: 'User not found' });
+    }
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};

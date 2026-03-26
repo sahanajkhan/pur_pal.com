@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Home, LayoutDashboard, Users, MessageSquare, Megaphone, LogOut } from 'lucide-react';
+import { Home, LayoutDashboard, Users, MessageSquare, Megaphone, LogOut, User } from 'lucide-react';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -11,7 +11,8 @@ const Navbar = () => {
     { name: 'Dashboard', path: '/dashboard', icon: LayoutDashboard },
     { name: 'Connections', path: '/connection', icon: Users },
     { name: 'Messages', path: '/messages', icon: MessageSquare },
-    { name: 'Announcements', path: '/announcement', icon: Megaphone }
+    { name: 'Announcements', path: '/announcement', icon: Megaphone },
+    { name: 'Profile', path: '/profile/me', icon: User }
   ];
 
   return (
