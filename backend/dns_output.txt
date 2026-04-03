@@ -1,0 +1,2 @@
+SERVERS=ac-bp08kyw-shard-00-00.flqnj6n.mongodb.net:27017,ac-bp08kyw-shard-00-01.flqnj6n.mongodb.net:27017,ac-bp08kyw-shard-00-02.flqnj6n.mongodb.net:27017
+TXT=&authSource=admin&replicaSet=atlas-oa5n35-shard-0
